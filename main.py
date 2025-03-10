@@ -1,12 +1,12 @@
 from flask import Flask
+import os
 
-app = Flask(name)
-
-name = "Aland"
+app = Flask(__name__)  # Usa __name__ en lugar de "Aland"
 
 @app.route('/')
 def hello_world():
-    return f"Hola {name}!"
+    return "Hola Aland!"
 
-if name == 'main':
-    app.run(host="0.0.0.0", port=3000, debug=True)
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 3000))  # Usa la variable PORT de Render
+    app.run(host="0.0.0.0", port=port, debug=True)
