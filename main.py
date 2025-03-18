@@ -1,4 +1,4 @@
-name = "Sung Ji Woo"
+name = "Anime"
 
 from flask import Flask
 
